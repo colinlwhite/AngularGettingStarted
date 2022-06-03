@@ -11,9 +11,11 @@ import { ProductDetailComponent } from './products/product-detail.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { RouterModule, CanActivate } from '@angular/router';
 import { ProductDetailGuard } from './products/product-detail.guard';
+import { ProductModule } from './products/product.module';
 
 @NgModule({
   declarations: [
+    // Only Components, Directives and Pipes
     AppComponent,
     ProductListComponent,
     ConvertToSpaces,
@@ -33,8 +35,12 @@ import { ProductDetailGuard } from './products/product-detail.guard';
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
-    ])
+    ]),
+    ProductModule
   ],
+  // Root Application Component - AppComponent
+  // Bootstrap Array should only be used in Root App Module - AppModule
+  // Other Angular Modules won't have bootstrap Array
   bootstrap: [AppComponent]
 })
 export class AppModule { }
