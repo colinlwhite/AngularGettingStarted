@@ -53,7 +53,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
     }
 
     onRatingClicked(message: string): void {
-        this.pageTitle = `Product List: ${message}`;
+        this.pageTitle = `Product List Tab: ${message}`;
     }
 
     ngOnDestroy(): void {
